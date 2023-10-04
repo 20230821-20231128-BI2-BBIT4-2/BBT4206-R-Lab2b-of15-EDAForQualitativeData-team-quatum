@@ -1,7 +1,7 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
-author: "<Specify your group name here>"
-date: "<Specify the date when you submitted the lab>"
+author: "Team quatum"
+date: "10/3/2023"
 output:
   github_document: 
     toc: yes
@@ -18,17 +18,19 @@ editor_options:
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 1.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 1.  134985 - Team Quatum - Ibrahim Mohamed                                                                                                                                             |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 2.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 2.  122268 - Team Quatum - Lambert Othieno                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 3.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 3.  136018 - Team Quatum - Earl Wanjala                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 4.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 4.  134787 - Team Quatum - Edwin Onyango                                                                                                                                             |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 5.  ID - Class Group - Name                                                                                                                                              |
+|                                                   | 5.  135590 - Team Quatum - Fareed Matovu   
+
+|                                                   | 5.  131123 - Team Quatum - Alex Mwai                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **GitHub Classroom Group Name**                   | *\<specify the name of the team you created on GitHub classroom\>*                                                                                                       |
+| **GitHub Classroom Group Name**                   | *\<Team Quatum \>*                                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Course Code**                                   | BBT4206                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,7 +102,7 @@ The 20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset is then loaded. The 
 ```{r Load Dataset}
 student_performance_dataset <-
   readr::read_csv(
-                  "../data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV", # nolint
+                  "data/Performance Dataset CSV.csv", # nolint
                   col_types =
                   readr::cols(
                               class_group =
@@ -248,20 +250,34 @@ Next, we display the quartiles for each numeric variable[*... think of this proc
 summary(student_performance_dataset)
 ```
 
-# \<You can Provide Another Appropriate Title Here if you wish\>
+# \<Rendering the .Rmd file in R Studio \>
 
-Describe the code chunk here.
+Render the .Rmd (R markdown) file into its .md (markdown) version by using
+knitR in RStudio.
+
 
 ```{r Your Sixth Code Chunk}
 # Fill this with R related code that will be executed when the R markdown file
+if (!is.element("knitR", installed.packages()[, 1])) {
+install.packages("knitR", dependencies = TRUE,
+repos = "https://cloud.r-project.org")
+}
+require("knitR")
+
 ```
 
-## \<You Can Have a Sub-Title Here if you wish\>
+# \<Installing Pandoc\>
 
-Describe the code chunk here.
+In this section we will install the pandoc package
+
 
 ```{r Your Seventh Code Chunk}
 # Fill this with other R related code that will be executed when the R markdown
+if (!is.element("pandoc", installed.packages()[, 1])) {
+install.packages("pandoc", dependencies = TRUE,
+repos = "https://cloud.r-project.org")
+}
+require("pandoc")
 ```
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
